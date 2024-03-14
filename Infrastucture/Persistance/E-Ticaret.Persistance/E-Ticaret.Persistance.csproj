@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Application\E-Ticaret.Application\E-Ticaret.Application.csproj" />
     <ProjectReference Include="..\..\..\Core\Domain\E-Ticaret.Domain\E-Ticaret.Domain.csproj" />
   </ItemGroup>
 
