@@ -1,3 +1,4 @@
+using E_Ticaret.Persistance;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,8 +8,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var env=builder.Environment;
 builder.Configuration.SetBasePath(env.ContentRootPath).AddJsonFile("appsettings.json",optional:false).AddJsonFile($"appsettings.{env.EnvironmentName}.json",optional:true);
+builder.Services.AddPersistanceRegister(builder.Configuration);//Bunu env belirlendikten sonra al çünkü configuration hangi envde çalýþtýðýný bir bulsun ondan sonra eklenebilsin dbcontext
 
 var app = builder.Build();
 
