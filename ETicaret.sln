@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{664632
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{22F58F08-1702-4082-98A1-73EBD63A55C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Ticaret.Application", "Core\Application\E-Ticaret.Application\E-Ticaret.Application.csproj", "{4118CDE5-E1F6-4641-B570-50D3B9FD911F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Ticaret.Application", "Core\Application\E-Ticaret.Application\E-Ticaret.Application.csproj", "{4118CDE5-E1F6-4641-B570-50D3B9FD911F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Ticaret.Domain", "Core\Domain\E-Ticaret.Domain\E-Ticaret.Domain.csproj", "{4922FC43-F1A3-4FE6-8F13-FB3A093A972E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Ticaret.Domain", "Core\Domain\E-Ticaret.Domain\E-Ticaret.Domain.csproj", "{4922FC43-F1A3-4FE6-8F13-FB3A093A972E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2C719AB4-6C39-4890-9622-896D43ECB078}"
 EndProject
@@ -21,11 +21,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistance", "Persistance", "{FB8F66A7-8571-432D-83DC-AB962E85AF1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Ticaret.Infrastucture", "Infrastucture\Infrastucture\E-Ticaret.Infrastucture\E-Ticaret.Infrastucture.csproj", "{D3D0EF50-0FF0-462A-974B-50EAF9053407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Ticaret.Infrastucture", "Infrastucture\Infrastucture\E-Ticaret.Infrastucture\E-Ticaret.Infrastucture.csproj", "{D3D0EF50-0FF0-462A-974B-50EAF9053407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Ticaret.Persistance", "Infrastucture\Persistance\E-Ticaret.Persistance\E-Ticaret.Persistance.csproj", "{7E09DAD5-FC1D-4071-83E2-4B737E4A75B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Ticaret.Persistance", "Infrastucture\Persistance\E-Ticaret.Persistance\E-Ticaret.Persistance.csproj", "{7E09DAD5-FC1D-4071-83E2-4B737E4A75B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Ticaret.API", "Presentation\E-Ticaret.API\E-Ticaret.API.csproj", "{680EBC9D-A4BC-4241-801E-AAF1FB8984FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Ticaret.API", "Presentation\E-Ticaret.API\E-Ticaret.API.csproj", "{680EBC9D-A4BC-4241-801E-AAF1FB8984FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaret.Mapper", "Core\Application\ETicaret.Mapper\ETicaret.Mapper.csproj", "{27880EFF-492B-41B5-BCAF-3DA711C73F1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{680EBC9D-A4BC-4241-801E-AAF1FB8984FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{680EBC9D-A4BC-4241-801E-AAF1FB8984FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{680EBC9D-A4BC-4241-801E-AAF1FB8984FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27880EFF-492B-41B5-BCAF-3DA711C73F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27880EFF-492B-41B5-BCAF-3DA711C73F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27880EFF-492B-41B5-BCAF-3DA711C73F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27880EFF-492B-41B5-BCAF-3DA711C73F1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{D3D0EF50-0FF0-462A-974B-50EAF9053407} = {813E5424-3517-4F65-BCDB-CC999352A095}
 		{7E09DAD5-FC1D-4071-83E2-4B737E4A75B4} = {FB8F66A7-8571-432D-83DC-AB962E85AF1D}
 		{680EBC9D-A4BC-4241-801E-AAF1FB8984FB} = {08411A9B-8074-4E56-BF79-7C2AD3EA8C56}
+		{27880EFF-492B-41B5-BCAF-3DA711C73F1D} = {22F58F08-1702-4082-98A1-73EBD63A55C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1BD68963-5A6E-4425-BB6A-46AE708B0DB0}

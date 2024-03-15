@@ -1,5 +1,7 @@
 using E_Ticaret.Persistance;
 using E_Ticaret.Application;
+using ETicaret.Mapper;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,6 +16,7 @@ var env=builder.Environment;
 builder.Configuration.SetBasePath(env.ContentRootPath).AddJsonFile("appsettings.json",optional:false).AddJsonFile($"appsettings.{env.EnvironmentName}.json",optional:true);
 builder.Services.AddPersistanceRegister(builder.Configuration);//Bunu env belirlendikten sonra al çünkü configuration hangi envde çalýþtýðýný bir bulsun ondan sonra eklenebilsin dbcontext
 builder.Services.AddApplicationRegister();
+builder.Services.AddAutoMapperRegister();
 
 var app = builder.Build();
 
