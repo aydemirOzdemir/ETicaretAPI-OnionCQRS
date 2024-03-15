@@ -1,6 +1,8 @@
 ﻿using E_Ticaret.Application.Interfaces.Repositories;
+using E_Ticaret.Application.UnitOfWorks;
 using E_Ticaret.Persistance.Context;
 using E_Ticaret.Persistance.Repositories;
+using E_Ticaret.Persistance.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,7 @@ public static class Registration
         });
         services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         services.AddScoped(typeof(IWriteRepository<>),typeof(WriteRepository<>));
+        services.AddScoped<IUnitOfWork,UnitOfWork>();
         return services;
     }
 }
