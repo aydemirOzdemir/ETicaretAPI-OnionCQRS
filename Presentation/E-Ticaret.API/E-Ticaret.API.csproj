@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Infrastucture\Persistance\E-Ticaret.Persistance\E-Ticaret.Persistance.csproj" />
   </ItemGroup>
 
