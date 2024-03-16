@@ -1,6 +1,7 @@
 using E_Ticaret.Persistance;
 using E_Ticaret.Application;
 using ETicaret.Mapper;
+using E_Ticaret.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.ConfigureExceptionHandlingMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();
