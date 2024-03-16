@@ -16,8 +16,4 @@
     <ProjectReference Include="..\..\Domain\E-Ticaret.Domain\E-Ticaret.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Products\Commands\" />
-  </ItemGroup>
-
 </Project>

@@ -23,5 +23,5 @@ public class Category:EntityBase
     public  int Priorty { get; set; }
     public  string Name { get; set; }
     public virtual ICollection<Detail> Details { get; set;}
-    public virtual ICollection<Product> Products { get; set;}
+    public virtual ICollection<ProductCategory> Products { get; set;}
 }
