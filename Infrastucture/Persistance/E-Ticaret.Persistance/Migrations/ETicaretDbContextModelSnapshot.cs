@@ -22,21 +22,6 @@ namespace E_Ticaret.Persistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriesId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CategoryProduct");
-                });
-
             modelBuilder.Entity("E_Ticaret.Domain.Entities.Brand", b =>
                 {
                     b.Property<int>("Id")
@@ -64,23 +49,23 @@ namespace E_Ticaret.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 14, 12, 17, 37, 499, DateTimeKind.Utc).AddTicks(1177),
+                            CreatedDate = new DateTime(2024, 3, 16, 8, 56, 55, 923, DateTimeKind.Utc).AddTicks(8926),
                             IsDeleted = false,
-                            Name = "Garden, Games & Movies"
+                            Name = "Music"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 14, 12, 17, 37, 499, DateTimeKind.Utc).AddTicks(1263),
+                            CreatedDate = new DateTime(2024, 3, 16, 8, 56, 55, 923, DateTimeKind.Utc).AddTicks(9023),
                             IsDeleted = false,
-                            Name = "Automotive, Automotive & Baby"
+                            Name = "Books, Toys & Electronics"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 14, 12, 17, 37, 499, DateTimeKind.Utc).AddTicks(1299),
+                            CreatedDate = new DateTime(2024, 3, 16, 8, 56, 55, 923, DateTimeKind.Utc).AddTicks(9040),
                             IsDeleted = true,
-                            Name = "Garden & Home"
+                            Name = "Automotive"
                         });
                 });
 
@@ -116,7 +101,7 @@ namespace E_Ticaret.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6928),
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3087),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -125,7 +110,7 @@ namespace E_Ticaret.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6935),
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3092),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -134,7 +119,7 @@ namespace E_Ticaret.Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6939),
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3095),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -143,7 +128,7 @@ namespace E_Ticaret.Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6944),
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3098),
                             IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
@@ -187,28 +172,28 @@ namespace E_Ticaret.Persistance.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 508, DateTimeKind.Local).AddTicks(9611),
-                            Description = "Corporis praesentium sit ea dolor.",
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 931, DateTimeKind.Local).AddTicks(5843),
+                            Description = "Consectetur kapının fugit beatae sıfat.",
                             IsDeleted = false,
-                            Title = "Koyun."
+                            Title = "Velit."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 508, DateTimeKind.Local).AddTicks(9713),
-                            Description = "Cezbelendi corporis lambadaki illo oldular.",
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 931, DateTimeKind.Local).AddTicks(5909),
+                            Description = "Blanditiis dışarı nihil dağılımı koşuyorlar.",
                             IsDeleted = true,
-                            Title = "Tempora duyulmamış."
+                            Title = "Quaerat qui."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 508, DateTimeKind.Local).AddTicks(9795),
-                            Description = "Yapacakmış ab kulu ad aliquam.",
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 931, DateTimeKind.Local).AddTicks(5963),
+                            Description = "Ducimus yaptı deleniti et veritatis.",
                             IsDeleted = false,
-                            Title = "Yaptı."
+                            Title = "Aut."
                         });
                 });
 
@@ -254,39 +239,39 @@ namespace E_Ticaret.Persistance.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 517, DateTimeKind.Local).AddTicks(2927),
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Discount = 8.251341846169510m,
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 940, DateTimeKind.Local).AddTicks(4912),
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Discount = 0.002761835305834510m,
                             IsDeleted = false,
-                            Price = 145.01m,
-                            Title = "Refined Soft Cheese"
+                            Price = 445.08m,
+                            Title = "Incredible Steel Ball"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedDate = new DateTime(2024, 3, 14, 15, 17, 37, 517, DateTimeKind.Local).AddTicks(3022),
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Discount = 2.403692014097890m,
+                            CreatedDate = new DateTime(2024, 3, 16, 11, 56, 55, 940, DateTimeKind.Local).AddTicks(7598),
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Discount = 0.2355034523606290m,
                             IsDeleted = false,
-                            Price = 785.56m,
-                            Title = "Fantastic Steel Pants"
+                            Price = 727.33m,
+                            Title = "Intelligent Plastic Shoes"
                         });
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("E_Ticaret.Domain.Entities.ProductCategory", b =>
                 {
-                    b.HasOne("E_Ticaret.Domain.Entities.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
-                    b.HasOne("E_Ticaret.Domain.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("E_Ticaret.Domain.Entities.Detail", b =>
@@ -311,9 +296,35 @@ namespace E_Ticaret.Persistance.Migrations
                     b.Navigation("Brand");
                 });
 
+            modelBuilder.Entity("E_Ticaret.Domain.Entities.ProductCategory", b =>
+                {
+                    b.HasOne("E_Ticaret.Domain.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("E_Ticaret.Domain.Entities.Product", "Product")
+                        .WithMany("Categories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("E_Ticaret.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Details");
+
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("E_Ticaret.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("Categories");
                 });
 #pragma warning restore 612, 618
         }

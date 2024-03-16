@@ -94,24 +94,24 @@ namespace E_Ticaret.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CategoryProduct",
+                name: "ProductCategories",
                 columns: table => new
                 {
-                    CategoriesId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryProduct", x => new { x.CategoriesId, x.ProductsId });
+                    table.PrimaryKey("PK_ProductCategories", x => new { x.ProductId, x.CategoryId });
                     table.ForeignKey(
-                        name: "FK_CategoryProduct_Categories_CategoriesId",
-                        column: x => x.CategoriesId,
+                        name: "FK_ProductCategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CategoryProduct_Products_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_ProductCategories_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -122,9 +122,9 @@ namespace E_Ticaret.Persistance.Migrations
                 columns: new[] { "Id", "CreatedDate", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 14, 12, 17, 37, 499, DateTimeKind.Utc).AddTicks(1177), false, "Garden, Games & Movies" },
-                    { 2, new DateTime(2024, 3, 14, 12, 17, 37, 499, DateTimeKind.Utc).AddTicks(1263), false, "Automotive, Automotive & Baby" },
-                    { 3, new DateTime(2024, 3, 14, 12, 17, 37, 499, DateTimeKind.Utc).AddTicks(1299), true, "Garden & Home" }
+                    { 1, new DateTime(2024, 3, 16, 8, 56, 55, 923, DateTimeKind.Utc).AddTicks(8926), false, "Music" },
+                    { 2, new DateTime(2024, 3, 16, 8, 56, 55, 923, DateTimeKind.Utc).AddTicks(9023), false, "Books, Toys & Electronics" },
+                    { 3, new DateTime(2024, 3, 16, 8, 56, 55, 923, DateTimeKind.Utc).AddTicks(9040), true, "Automotive" }
                 });
 
             migrationBuilder.InsertData(
@@ -132,10 +132,10 @@ namespace E_Ticaret.Persistance.Migrations
                 columns: new[] { "Id", "CreatedDate", "IsDeleted", "Name", "ParentId", "Priorty" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6928), false, "Elektrik", 0, 1 },
-                    { 2, new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6935), false, "Moda", 0, 2 },
-                    { 3, new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6939), false, "Bilgisayar", 1, 1 },
-                    { 4, new DateTime(2024, 3, 14, 15, 17, 37, 499, DateTimeKind.Local).AddTicks(6944), false, "Kadın", 2, 1 }
+                    { 1, new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3087), false, "Elektrik", 0, 1 },
+                    { 2, new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3092), false, "Moda", 0, 2 },
+                    { 3, new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3095), false, "Bilgisayar", 1, 1 },
+                    { 4, new DateTime(2024, 3, 16, 11, 56, 55, 924, DateTimeKind.Local).AddTicks(3098), false, "Kadın", 2, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -143,9 +143,9 @@ namespace E_Ticaret.Persistance.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "IsDeleted", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 3, 14, 15, 17, 37, 508, DateTimeKind.Local).AddTicks(9611), "Corporis praesentium sit ea dolor.", false, "Koyun." },
-                    { 2, 3, new DateTime(2024, 3, 14, 15, 17, 37, 508, DateTimeKind.Local).AddTicks(9713), "Cezbelendi corporis lambadaki illo oldular.", true, "Tempora duyulmamış." },
-                    { 3, 4, new DateTime(2024, 3, 14, 15, 17, 37, 508, DateTimeKind.Local).AddTicks(9795), "Yapacakmış ab kulu ad aliquam.", false, "Yaptı." }
+                    { 1, 1, new DateTime(2024, 3, 16, 11, 56, 55, 931, DateTimeKind.Local).AddTicks(5843), "Consectetur kapının fugit beatae sıfat.", false, "Velit." },
+                    { 2, 3, new DateTime(2024, 3, 16, 11, 56, 55, 931, DateTimeKind.Local).AddTicks(5909), "Blanditiis dışarı nihil dağılımı koşuyorlar.", true, "Quaerat qui." },
+                    { 3, 4, new DateTime(2024, 3, 16, 11, 56, 55, 931, DateTimeKind.Local).AddTicks(5963), "Ducimus yaptı deleniti et veritatis.", false, "Aut." }
                 });
 
             migrationBuilder.InsertData(
@@ -153,18 +153,18 @@ namespace E_Ticaret.Persistance.Migrations
                 columns: new[] { "Id", "BrandId", "CreatedDate", "Description", "Discount", "IsDeleted", "Price", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 3, 14, 15, 17, 37, 517, DateTimeKind.Local).AddTicks(2927), "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality", 8.251341846169510m, false, 145.01m, "Refined Soft Cheese" },
-                    { 2, 3, new DateTime(2024, 3, 14, 15, 17, 37, 517, DateTimeKind.Local).AddTicks(3022), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", 2.403692014097890m, false, 785.56m, "Fantastic Steel Pants" }
+                    { 1, 1, new DateTime(2024, 3, 16, 11, 56, 55, 940, DateTimeKind.Local).AddTicks(4912), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", 0.002761835305834510m, false, 445.08m, "Incredible Steel Ball" },
+                    { 2, 3, new DateTime(2024, 3, 16, 11, 56, 55, 940, DateTimeKind.Local).AddTicks(7598), "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients", 0.2355034523606290m, false, 727.33m, "Intelligent Plastic Shoes" }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CategoryProduct_ProductsId",
-                table: "CategoryProduct",
-                column: "ProductsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Details_CategoryId",
                 table: "Details",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategories_CategoryId",
+                table: "ProductCategories",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
@@ -177,16 +177,16 @@ namespace E_Ticaret.Persistance.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CategoryProduct");
-
-            migrationBuilder.DropTable(
                 name: "Details");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Brands");
