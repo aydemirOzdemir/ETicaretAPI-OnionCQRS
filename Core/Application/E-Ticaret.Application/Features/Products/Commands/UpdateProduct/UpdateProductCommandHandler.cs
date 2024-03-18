@@ -5,7 +5,7 @@ using MediatR;
 
 namespace E_Ticaret.Application.Features.Products.Commands.UpdateProduct;
 
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest>
+public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest,Unit>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
@@ -15,7 +15,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
         this.unitOfWork = unitOfWork;
         this.mapper = mapper;
     }
-    public async Task Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
     {
         Product product= await unitOfWork.GetReadRepository<Product>().GetAsync(x=>x.Id==request.Id && !x.IsDeleted);
         Product map=mapper.Map<Product,UpdateProductCommandRequest>(request);
@@ -25,5 +25,6 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
             await unitOfWork.GetWriteRepository<ProductCategory>().AddAsync(new ProductCategory { CategoryId = categoryId, ProductId = product.Id });
         await unitOfWork.GetWriteRepository<Product>().UpdateAsync(map);
         await unitOfWork.SaveAsync();
+        return Unit.Value;
     }
 }
