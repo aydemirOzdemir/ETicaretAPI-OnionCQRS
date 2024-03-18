@@ -1,4 +1,5 @@
-﻿using E_Ticaret.Application.Behaviours;
+﻿using E_Ticaret.Application.Bases;
+using E_Ticaret.Application.Behaviours;
 using E_Ticaret.Application.Exceptions;
 using FluentValidation;
 using MediatR;
@@ -19,9 +20,15 @@ public static class Registration
     {
         services.AddMediatR(cfg=> cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         services.AddTransient<ExceptionMiddleware>();
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddRulesFromAssemblyContaing(Assembly.GetExecutingAssembly(),typeof(BaseRules));  services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        return services;
+    }
+    private static IServiceCollection AddRulesFromAssemblyContaing(this IServiceCollection services,Assembly assembly,Type type)
+    {
+        var types= assembly.GetTypes().Where(t=>t.IsSubclassOf(type)&& type != t).ToList();
+        foreach (var t in types) services.AddTransient(t);
         return services;
     }
 }
