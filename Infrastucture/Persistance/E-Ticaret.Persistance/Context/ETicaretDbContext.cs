@@ -1,4 +1,5 @@
 ﻿using E_Ticaret.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace E_Ticaret.Persistance.Context;
 
-public class ETicaretDbContext:DbContext
+public class ETicaretDbContext:IdentityDbContext<User,Role,Guid>
 {
     public ETicaretDbContext()
     {
