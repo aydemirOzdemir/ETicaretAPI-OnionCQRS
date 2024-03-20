@@ -13,5 +13,5 @@ public interface ITokenService
 {
     Task<JwtSecurityToken> CreateToken(User user, IList<string> roles);
     string GenerateRefreshToken();
-    ClaimsPrincipal? GetPrincipalFromExpireToken();
+    ClaimsPrincipal? GetPrincipalFromExpireToken(string? token);
 }
