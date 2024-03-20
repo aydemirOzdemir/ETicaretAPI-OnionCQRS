@@ -2,6 +2,7 @@ using E_Ticaret.Persistance;
 using E_Ticaret.Application;
 using ETicaret.Mapper;
 using E_Ticaret.Application.Exceptions;
+using E_Ticaret.Infrastucture;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Configuration.SetBasePath(env.ContentRootPath).AddJsonFile("appsettings.
 builder.Services.AddPersistanceRegister(builder.Configuration);//Bunu env belirlendikten sonra al çünkü configuration hangi envde çalýþtýðýný bir bulsun ondan sonra eklenebilsin dbcontext
 builder.Services.AddApplicationRegister();
 builder.Services.AddAutoMapperRegister();
+builder.Services.AddInfrastructureRegister(builder.Configuration);
 
 var app = builder.Build();
 
