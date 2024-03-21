@@ -1,4 +1,5 @@
-﻿using E_Ticaret.Application.Features.Auth.Commands.Register;
+﻿using E_Ticaret.Application.Features.Auth.Commands.Login;
+using E_Ticaret.Application.Features.Auth.Commands.Register;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,5 +21,11 @@ public class AuthController : ControllerBase
     {
         await mediator.Send(request);
         return Created();
+    }
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginCommandRequest request)
+    {
+        
+        return Ok(await mediator.Send(request));
     }
 }
