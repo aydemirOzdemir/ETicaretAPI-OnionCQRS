@@ -1,4 +1,5 @@
 ﻿using E_Ticaret.Application.Features.Auth.Commands.Login;
+using E_Ticaret.Application.Features.Auth.Commands.RefreshToken;
 using E_Ticaret.Application.Features.Auth.Commands.Register;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -26,6 +27,12 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login(LoginCommandRequest request)
     {
         
+        return Ok(await mediator.Send(request));
+    }
+    [HttpPost]
+    public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
+    {
+
         return Ok(await mediator.Send(request));
     }
 }
