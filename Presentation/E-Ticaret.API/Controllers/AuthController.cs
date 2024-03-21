@@ -1,6 +1,8 @@
 ﻿using E_Ticaret.Application.Features.Auth.Commands.Login;
 using E_Ticaret.Application.Features.Auth.Commands.RefreshToken;
 using E_Ticaret.Application.Features.Auth.Commands.Register;
+using E_Ticaret.Application.Features.Auth.Commands.Revoke;
+using E_Ticaret.Application.Features.Auth.Commands.RevokeAll;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,11 +30,24 @@ public class AuthController : ControllerBase
     {
         
         return Ok(await mediator.Send(request));
+
     }
     [HttpPost]
     public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
     {
 
         return Ok(await mediator.Send(request));
+    }
+    [HttpPost]
+    public async Task<IActionResult> Revoke(RevokeCommandRequest request)
+    {
+        await mediator.Send(request);
+        return Ok();
+    }
+    [HttpPost]
+    public async Task<IActionResult> RevokeAll( )
+    {
+        await mediator.Send(new RevokeAllCommandRequest());
+        return Ok();
     }
 }
