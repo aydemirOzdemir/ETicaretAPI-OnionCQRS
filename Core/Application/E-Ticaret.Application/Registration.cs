@@ -23,6 +23,7 @@ public static class Registration
         services.AddRulesFromAssemblyContaing(Assembly.GetExecutingAssembly(),typeof(BaseRules));  services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBahevior<,>));
         return services;
     }
     private static IServiceCollection AddRulesFromAssemblyContaing(this IServiceCollection services,Assembly assembly,Type type)
