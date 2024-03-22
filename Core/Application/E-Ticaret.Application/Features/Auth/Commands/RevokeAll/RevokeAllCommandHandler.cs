@@ -26,7 +26,7 @@ public class RevokeAllCommandHandler : BaseHandler, IRequestHandler<RevokeAllCom
      var users=await userManager.Users.ToListAsync(cancellationToken);
         foreach(var user in users)
         {
-            user.RefreshToken=null,
+            user.RefreshToken = null;
                 await userManager.UpdateAsync(user);
             await userManager.UpdateSecurityStampAsync(user);
 
